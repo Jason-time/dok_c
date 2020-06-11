@@ -1,16 +1,22 @@
 #include <stdio.h>
+
 int main(void) {
 
-	int nMax = 0;
-	int a, b, c;
-	scanf_s("%d%d%d", &a, &b, &c);
-
-	nMax = a > b ? a > c ? a : c : b>c?b:c ;
-	printf("MAX : %d\n", nMax);
-
+	int num1, num2, num3, max = 0;
+	scanf_s("%d %d %d", &num1, &num2, &num3);
+	if (num1 > num2) {
+		if (num1 > num3) {
+			max = num1;
+		}
+		if (num1 < num3) {
+			max = num3;
+		}
+	}
+	if (num1 < num2) {
+		if (num2 > num3) max = num2;
+		if (num2 < num3) max = num3;
+	}
+	printf("MAX : %d", max);
 	return 0;
-}  // p.168  00:12:02.63
-
-
-
+}  // p.186	chpater 6-1 00:10:55.49
 

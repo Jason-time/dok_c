@@ -75,5 +75,46 @@ int main(void) {
 	return 0;
 }  // p.168  00:12:02.63
 
+#include <stdio.h>
+
+int main(void) {
+
+	int nMax=-101, nInput = 0;
+
+	scanf_s("%d", &nInput);
+	nMax = nInput > nMax ? nInput : nMax;
+
+	scanf_s("%d", &nInput);
+	nMax = nInput > nMax ? nInput : nMax;
+
+	scanf_s("%d", &nInput);
+	nMax = nInput > nMax ? nInput : nMax;
+
+	printf("MAX : %d\n", nMax);
+	return 0;
+}  // p.171	00:06:43.85
+
+#include <stdio.h>
+
+int main(void) {
+
+	int num1, num2, num3, max = 0;
+	scanf_s("%d %d %d", &num1, &num2, &num3);
+	if (num1 > num2) {
+		if (num1 > num3) {
+			max = num1;
+		}
+		if (num1 < num3) {
+			max = num3;
+		}
+	}
+	if (num1 < num2) {
+		if (num2 > num3) max = num2;
+		if (num2 < num3) max = num3;
+	}
+	printf("MAX : %d", max);
+	return 0;
+}  // p.186	chpater 6-1 00:10:55.49
+
 
  */
