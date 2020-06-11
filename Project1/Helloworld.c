@@ -2,21 +2,17 @@
 
 int main(void) {
 
-	int num1, num2, num3, max = 0;
-	scanf_s("%d %d %d", &num1, &num2, &num3);
-	if (num1 > num2) {
-		if (num1 > num3) {
-			max = num1;
-		}
-		if (num1 < num3) {
-			max = num3;
-		}
+	int nAge, nFee = 1000;
+	double dResult;
+
+	scanf_s("%d", &nAge); 
+	dResult = nFee;
+
+	if (nAge < 20) { 
+		dResult = nFee * 0.75;
 	}
-	if (num1 < num2) {
-		if (num2 > num3) max = num2;
-		if (num2 < num3) max = num3;
-	}
-	printf("MAX : %d", max);
-	return 0;
-}  // p.186	chpater 6-1 00:10:55.49
+
+		printf("최종요금:%.f원", dResult);
+		return 0;
+}  // p.187	chpater 06-02 00:10:55.49
 
