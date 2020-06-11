@@ -1,17 +1,16 @@
 #include <stdio.h>
- int main() {
+int main(void) {
 
-	 int nInput;
-	 char nPath_y[20] = "합격";
-	 char nPath_n[20] = "불합격";
-	 
-	printf("키를 입력하세요. : ");
-	scanf_s("%d", &nInput);
+	int nMax = 0;
+	int a, b, c;
+	scanf_s("%d%d%d", &a, &b, &c);
 
-	printf("결과: %s\n", nInput >= 150 ? nPath_y : nPath_n);
+	nMax = a > b ? a > c ? a : c : b>c?b:c ;
+	printf("MAX : %d\n", nMax);
 
-  	return 0;
-}  // p.168  00:22:48.43
+	return 0;
+}  // p.168  00:12:02.63
+
 
 
 
