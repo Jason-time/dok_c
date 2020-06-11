@@ -1,14 +1,17 @@
 #include <stdio.h>
-#include <float.h>
-int main() {
- 	int num1,nH, nM,nS;
+ int main() {
 
-	scanf_s("%d", &num1);
-	nS = num1 % 60;
-	nM =  (num1 / 60)%60;
-	nH = num1 / 3600;
+	 int nInput;
+	 char nPath_y[20] = "합격";
+	 char nPath_n[20] = "불합격";
+	 
+	printf("키를 입력하세요. : ");
+	scanf_s("%d", &nInput);
 
-	printf("%d초는 %02d시간 %02d분 %02d초 입니다.\n",  num1,nH,nM,nS); 
-	return 0;
-}
- 
+	printf("결과: %s\n", nInput >= 150 ? nPath_y : nPath_n);
+
+  	return 0;
+}  // p.168  00:22:48.43
+
+
+
