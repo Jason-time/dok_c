@@ -2,18 +2,15 @@
 
 int main(void) {
 
-	int  nInput, nStartNum = 1, nEndNum = 9;
+	int  nStartNum = 1, nEndNum = 5, i, j;
 
-	scanf_s("%d", &nInput);
-	if (2 > nInput || 9 < nInput) {
-		puts("ERROR");
-		return 0;
-	}
-	else {
-		while (nStartNum <= nEndNum) {
-			printf("%d * %d = %d\n", nInput, nStartNum, nInput * nStartNum);
-			nStartNum++;
+	for (i = nStartNum; i <= nEndNum; i++) {
+		for (j = nStartNum; j <= i;j++) {
+			printf("* ");
 		}
+		putchar('\n');
 	}
+
 	return 0;
-}  // p.237	chpater7 07-04 print ? * ? = ?*?	00:09:02.43
+}  // p.241	chpater7 07-05 00:10:50.19
+
