@@ -2,19 +2,20 @@
 
 int main(void) {
 
-	int nCnt = 0, nInput;
+	int nRoop1 = 0, nRoop2 = 0, nCnt = 5;
 
-	scanf_s("%d", &nInput);
-	if (nInput < 1) nInput = 1;
-	else if (nInput > 9) nInput = 9;
-
-	while (nCnt != nInput) {
-		putchar('*');
-		nCnt++;
-	}
-	putchar('\n');
+	while (nRoop1 < nCnt) {
+		nRoop2 = 0;
+		while (nRoop2 < nCnt) {
+			putchar('*');
+			putchar('\t');
+			nRoop2++;
+		}
+		putchar('\n');
+		nRoop1++;
+	}  
 	return 0;
-}  // p.225	chpater7 rooping  00:12:10.58
+}  // p.234	chpater7 5 by 5 nested roop    ??
 
 
 
