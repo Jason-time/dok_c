@@ -8,22 +8,22 @@ int main() {
 	printf("두 정수를 입력하세요\n");
 	int num1, num2;
 	scanf_s("%d %d", &num1, &num2);
-	printf("AVG : %.2f\n", (num1+(float)num2)/2);
+	printf("AVG : %.2f\n", (num1 + (float)num2) / 2);
 
 	return 0;
-}	00:04:53.87
+}	00:04 : 53.87
 
 #include <stdio.h>
 #include <float.h>
 int main() {
-	int num1,nH, nM,nS;
+	int num1, nH, nM, nS;
 
 	scanf_s("%d", &num1);
 	nS = num1 % 60;
-	nM =  (num1 / 60)%60;
+	nM = (num1 / 60) % 60;
 	nH = num1 / 3600;
 
-	printf("%d초는 %02d시간 %02d분 %02d초 입니다.\n",  num1,nH,nM,nS);
+	printf("%d초는 %02d시간 %02d분 %02d초 입니다.\n", num1, nH, nM, nS);
 	return 0;
 }	00:09 : 10.58
 
@@ -47,11 +47,11 @@ int main() {
 }  // p.129 / 00:04:56.24
 
 #include <stdio.h>
- int main() {
+int main() {
 
-	 int nInput;
-	 char nPath_y[20] = "합격";
-	 char nPath_n[20] = "불합격";
+	int nInput;
+	char nPath_y[20] = "합격";
+	char nPath_n[20] = "불합격";
 
 	printf("키를 입력하세요. : ");
 	scanf_s("%d", &nInput);
@@ -69,7 +69,7 @@ int main(void) {
 	int a, b, c;
 	scanf_s("%d%d%d", &a, &b, &c);
 
-	nMax = a > b ? a > c ? a : c : b>c?b:c ;
+	nMax = a > b ? a > c ? a : c : b > c ? b : c;
 	printf("MAX : %d\n", nMax);
 
 	return 0;
@@ -79,7 +79,7 @@ int main(void) {
 
 int main(void) {
 
-	int nMax=-101, nInput = 0;
+	int nMax = -101, nInput = 0;
 
 	scanf_s("%d", &nInput);
 	nMax = nInput > nMax ? nInput : nMax;
@@ -130,8 +130,8 @@ int main(void) {
 		dResult = nFee * 0.75;
 	}
 
-		printf("최종요금:%.f원", dResult);
-		return 0;
+	printf("최종요금:%.f원", dResult);
+	return 0;
 }  // p.187	chpater 06-02 00:12:56.20
 
 #include <stdio.h>
@@ -196,13 +196,13 @@ int main(void) {
 
 int main(void) {
 
-	int nSum = 0, nStartNum = 1,nEndNum=10;
+	int nSum = 0, nStartNum = 1, nEndNum = 10;
 
 	while (nStartNum <= nEndNum) {
 		nSum += nStartNum;
 		nStartNum++;
 	}
-	printf("%d",nSum);
+	printf("%d", nSum);
 	return 0;
 }  // p.237	chpater7 07-03 add 1 to 10	00:06:21.30
 
@@ -249,33 +249,43 @@ int main(void) {
 	int  nStartNum = 1, nEndNum = 5, i, j;
 
 	for (i = nStartNum; i <= nEndNum; i++) {
-		for (j = nEndNum-i; j >= nStartNum;j--) {
-			printf("\t");
-		}
-		for(j=nStartNum ; j<=i ; j++)			printf("\t*");
-		putchar('\n');
-	}
-
-	return 0;
-}  // p.241	chpater7 07-06 00:06:57.59
-
-#include <stdio.h>
-
-int main(void) {
-
-	int  nStartNum = 1, nEndNum = 5, i, j, k;
-
-	for (i = nStartNum; i <= nEndNum; i++) {
 		for (j = nEndNum - i; j >= nStartNum;j--) {
 			printf("\t");
 		}
-		for (j = nStartNum; j <= i; j++)	printf("\t*");
-		for (k = nStartNum; k < i; k++) printf("\t*");
+		for (j = nStartNum; j <= i; j++)			printf("\t*");
+		putchar('\n');
+	}
+	Or you can write like this
+		-------------------------- -
+		int i = 0, j = 0;
+	for (i = 0; i < 5; ++i) {
+		for (j = 0;j < 5;++j) {
+			if (i + j >= 4) printf("*\t");
+			else		putchar('\t');
+		}
 		putchar('\n');
 	}
 
-	return 0;
-}  // chpater7 p.241 07-07 Print out pyramid	00:05:33.97
+		return 0;
+	}  // p.241	chpater7 07-06 00:06:57.59
+
+#include <stdio.h>
+
+	int main(void) {
+
+		int  nStartNum = 1, nEndNum = 5, i, j, k;
+
+		for (i = nStartNum; i <= nEndNum; i++) {
+			for (j = nEndNum - i; j >= nStartNum;j--) {
+				printf("\t");
+			}
+			for (j = nStartNum; j <= i; j++)	printf("\t*");
+			for (k = nStartNum; k < i; k++) printf("\t*");
+			putchar('\n');
+		}
+
+		return 0;
+	}  // chpater7 p.241 07-07 Print out pyramid	00:05:33.97
 
 
- */
+*/
