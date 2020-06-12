@@ -2,22 +2,19 @@
 
 int main(void) {
 
-	int nAge, nFee = 1000;
-	double dResult;
+	int nCnt = 0, nInput;
 
-	scanf_s("%d", &nAge);
-	dResult = nFee;
+	scanf_s("%d", &nInput);
+	if (nInput < 1) nInput = 1;
+	else if (nInput > 9) nInput = 9;
 
-	if (nAge <= 3) {
-		dResult = nFee * 0;
+	while (nCnt != nInput) {
+		putchar('*');
+		nCnt++;
 	}
-	else if (nAge <= 13)		dResult = nFee * 0.5;
-	else if (nAge <= 19)		dResult = nFee * 0.75;
-	else 	dResult = nFee * 1.0;
-
-	printf("최종요금: %.f원", dResult);
+	putchar('\n');
 	return 0;
-}  // p.197	chpater6 branching  00:07:22.35
+}  // p.225	chpater7 rooping  00:12:10.58
 
 
 
