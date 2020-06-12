@@ -2,12 +2,18 @@
 
 int main(void) {
 
-	int nSum = 0, nStartNum = 1,nEndNum=10;
+	int  nInput, nStartNum = 1, nEndNum = 9;
 
-	while (nStartNum <= nEndNum) {
-		nSum += nStartNum;
-		nStartNum++;
-	} 
-	printf("%d",nSum);
+	scanf_s("%d", &nInput);
+	if (2 > nInput || 9 < nInput) {
+		puts("ERROR");
+		return 0;
+	}
+	else {
+		while (nStartNum <= nEndNum) {
+			printf("%d * %d = %d\n", nInput, nStartNum, nInput * nStartNum);
+			nStartNum++;
+		}
+	}
 	return 0;
-}  // p.237	chpater7 07-03 add 1 to 10	00:06:21.30
+}  // p.237	chpater7 07-04 print ? * ? = ?*?	00:09:02.43
