@@ -297,5 +297,26 @@ int main(void) {
 		return 0;
 	}  // chpater7 p.241 07-07 Print out pyramid	00:05:33.97
 
+	#include <stdio.h>
+
+int main(void) {
+	int aList[5] = { 30,40,10,50,20 };
+	int i = 0;
+
+	for (i =1;i < 5;i++)
+		if (aList[0] < aList[i] )
+		{
+			aList[0] = aList[i];
+		}
+
+	for (i = 0;i < 5;i++)
+		printf("%d\t", aList[i]);
+
+	putchar('\n');
+
+	printf("MAX: %d\n", aList[0]);
+
+	return 0;
+}  // chpater 8 p.272 08-01 Find out value of Max	00:08:04.88
 
 */
