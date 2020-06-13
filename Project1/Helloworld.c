@@ -1,21 +1,28 @@
 #include <stdio.h>
 
 int main(void) {
-	int aList[5] = { 30,40,10,50,20 };
-	int i = 0;
-
-	for (i =1;i < 5;i++)
-		if (aList[0] < aList[i] )
-		{
-			aList[0] = aList[i];
+	int aList[3][4] = {
+		{10,20,30},
+		{40,50,60}
+	};
+	int i = 0, j = 0;
+	//
+	for (i = 0;i < 2;++i) {
+		for (j = 0;j < 3;++j) {
+			aList[i][3] += aList[i][j];
+			aList[2][j] += aList[i][j];
 		}
+		if (3 == j) aList[2][j] += aList[i][3];
+	}
 
-	for (i = 0;i < 5;i++)
-		printf("%d\t", aList[i]);
 
-	putchar('\n');
-
-	printf("MAX: %d\n", aList[0]);
+	for (i = 0;i < 3;++i) {
+		for (j = 0;j < 4;++j) {
+			printf("%d\t", aList[i][j]);
+		}
+		putchar('\n');
+	}
 
 	return 0;
-}  // chpater 8 p.272 08-01 Find out value of Max	00:08:04.88
+}  // chpater 8 p.282 08-03 Find out value of Min	00:31:31.87
+
