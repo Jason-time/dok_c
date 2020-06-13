@@ -24,5 +24,5 @@ int main(void) {
 	}
 
 	return 0;
-}  // chpater 8 p.282 08-03 Find out value of Min	00:31:31.87
+}  // chpater 8 p.282 08-03 Calculate the total.	00:31:31.87
 
