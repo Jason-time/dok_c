@@ -6,19 +6,23 @@ int main(void) {
 
 	int i = 0, j = 0, nTmp = 0;
 	// 
-	for (i = 0;i < 4;++i) {
-		for (j = i + 1;j < 5;++j) {
-			if (aList[i] > aList[j]) {
-				nTmp = aList[i];
-				aList[i] = aList[j];
-				aList[j] = nTmp;
-			}
-		}
+	for (i=5-1;i > 0;--i) { 
+
+		for (j = 0;j < i;++j) {
+			if (aList[j] > aList[j+1]) {
+				nTmp = aList[j];
+				aList[j] = aList[j+1];
+				aList[j+1] = nTmp;
+			} 
+		} 
 	}
+	
+	//
 	for (i = 0;i < 5;++i) {
 		printf("%d\t", aList[i]);
 	}
 	putchar('\n');
 
 	return 0;
-}  // chpater09 09-01 p.301  Bubble sort	00:12:35.18
+}  // chpater09 09-02 p.303  Bubble sort2	00:42:32.89
+
