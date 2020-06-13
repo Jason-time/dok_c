@@ -283,7 +283,17 @@ int main(void) {
 			for (k = nStartNum; k < i; k++) printf("\t*");
 			putchar('\n');
 		}
-
+		another good code
+		---------------------------
+		int i =0, j=0;
+		for(i=0;i<5; ++i){
+		for(j=0; j<5+i; ++j){
+			if(i+j>=4) printf("*\t");
+			else putchar('\t');
+		}
+		putchar('\n');
+		}
+		---------------------------
 		return 0;
 	}  // chpater7 p.241 07-07 Print out pyramid	00:05:33.97
 
