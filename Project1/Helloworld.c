@@ -1,28 +1,24 @@
 #include <stdio.h>
 
 int main(void) {
-	int aList[3][4] = {
-		{10,20,30},
-		{40,50,60}
-	};
-	int i = 0, j = 0;
-	//
-	for (i = 0;i < 2;++i) {
-		for (j = 0;j < 3;++j) {
-			aList[i][3] += aList[i][j];
-			aList[2][j] += aList[i][j];
-		}
-		if (3 == j) aList[2][j] += aList[i][3];
-	}
 
+	int aList[5] = { 30,40,10,50,20 };
 
-	for (i = 0;i < 3;++i) {
-		for (j = 0;j < 4;++j) {
-			printf("%d\t", aList[i][j]);
+	int i = 0, j = 0, nTmp = 0;
+	// 
+	for (i = 0;i < 4;++i) {
+		for (j = i + 1;j < 5;++j) {
+			if (aList[i] > aList[j]) {
+				nTmp = aList[i];
+				aList[i] = aList[j];
+				aList[j] = nTmp;
+			}
 		}
-		putchar('\n');
 	}
+	for (i = 0;i < 5;++i) {
+		printf("%d\t", aList[i]);
+	}
+	putchar('\n');
 
 	return 0;
-}  // chpater 8 p.282 08-03 Calculate the total.	00:31:31.87
-
+}  // chpater09 09-01 p.301  Bubble sort	00:12:35.18

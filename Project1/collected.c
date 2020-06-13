@@ -373,5 +373,29 @@ int main(void) {
 	return 0;
 }  // chpater08 08-03 p.282  Calculate the total.	00:31:31.87
 
+#include <stdio.h>
+
+int main(void) {
+
+	int aList[5] = { 30,40,10,50,20 };
+
+	int i = 0, j = 0, nTmp = 0;
+	//
+	for (i = 0;i < 4;++i) {
+		for (j = i + 1;j < 5;++j) {
+			if (aList[i] > aList[j]) {
+				nTmp = aList[i];
+				aList[i] = aList[j];
+				aList[j] = nTmp;
+			}
+		}
+	}
+	for (i = 0;i < 5;++i) {
+		printf("%d\t", aList[i]);
+	}
+	putchar('\n');
+
+	return 0;
+}  // chpater09 09-01 p.301  Bubble sort	00:12:35.18
 
 */
