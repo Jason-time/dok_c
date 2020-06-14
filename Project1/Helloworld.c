@@ -2,30 +2,28 @@
 
 int main(void) {
 
-	int aList[5] = { 30,40,10,50,20 };
+	int aList[5][5] = { 0 };
 
-	int i = 0, j = 0, mMinEndex = 0, nTmp = 0;
+	int i = 0, j = 0, nCounter = 0;
 
 	// 
-	for (i=0;i < 4;++i) { 
-		mMinEndex = i;
-		for (j = i+1;j < 5;++j) {
-			if (aList[mMinEndex] > aList[j]) {
-				mMinEndex = j;
-			} 
-				nTmp = aList[mMinEndex];
-				aList[mMinEndex] = aList[i];
-				aList[i] = nTmp;
-		} 
+	for (i = 0;i < 5;++i) {
+		if (i % 2 == 0)
+			for (j = 0; j < 5;++j)
+				aList[i][j] = ++nCounter;
+		else
+			for (j = 0; j < 5;++j)
+				aList[i][4 - j] = ++nCounter;
 	}
-	
+
 	//
 	for (i = 0;i < 5;++i) {
-		printf("%d\t", aList[i]);
+		for (j = 0;j < 5;++j)
+			printf("%d\t", aList[i][j]);
+		putchar('\n');
 	}
-	putchar('\n');
 
 	return 0;
-}  // chpater09 09-03 p.306 selection sort	00:19:25.78
+}  // chpater09 p.308 zigzag	
 
 
