@@ -4,26 +4,22 @@ int main(void) {
 
 	int aList[5][5] = { 0 };
 
-	//nFlag 변수는 반복문 내부에서 매번 참/거짓으로 변함
-	int i = 0, j = 0, nCounter = 0, nFlag = 1;
+	int x = -1, y = 0, nCounter = 0;
+	int i = 0, j = 0, nLength = 9, nDirection = 1;
 
-	for (i = 0;i < 5;++i) {
-		// 토글을 위한 플레그 변수
-		if (nFlag) {
-			//정방향 채우기
-			for (j = 0; j < 5; j++) {
-				aList[i][j] = ++nCounter;
-				//다음 반복문에서 거짓으로 바꾸기 위해 수정
-			}
-			nFlag = 0;
+	for (nLength = 9; nLength > 0; nLength -= 2) {
+		for (i = 0; i < nLength; ++i) {
+
+			if (i < nLength / 2 + 1)	x += nDirection;
+			else						y += nDirection;
+
+			aList[y][x] = ++nCounter;
 		}
-		else {
-			for (j = 0; j < 5; j++) {
-				aList[i][4 - j] = ++nCounter;
-			}
-			nFlag = 1;
-		}
+		nDirection = -nDirection;
 	}
+
+	
+
 	// 배열 출력
 	for (i = 0;i < 5;++i) {
 		for (j = 0;j < 5;++j)
@@ -32,4 +28,4 @@ int main(void) {
 	}
 
 	return 0;
-}  // chpater09 p.312 arraycross04.c	
+}  // chpater09 p.314 09-04  snail01.c	
