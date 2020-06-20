@@ -4,16 +4,22 @@ int main(void) {
 
 	int aList[5][5] = { 0 };
 
-	int i = 0, j = 0, nCounter = 0;
+	int i = 0, j = 0, nCounter = 0, nOffset = 1;
 
-	// 
+	//
 	for (i = 0;i < 5;++i) {
-		if (i % 2 == 0)
-			for (j = 0; j < 5;++j)
-				aList[i][j] = ++nCounter;
-		else
-			for (j = 0; j < 5;++j)
-				aList[i][4 - j] = ++nCounter;
+		// 홀수 행과 짝수 행을 구별하고 첫 번째 요소의 초깃값을 결정
+		if (i % 2 == 0) nCounter = i * 5;
+		else			nCounter = (i + 1) * 5 + 1;
+
+		for (j = 0; j < 5; j++) {
+			//nOffset이 양수면 nCounter 증가, 음수면 감소
+			nCounter += nOffset;
+			aList[i][j] = nCounter;
+		}
+		// 토글 스위치처럼 행마다 양수/음수 변경
+		// 여기서 '-'는 부호 변경 연산자이다ㅏ.
+		nOffset = -nOffset;
 	}
 
 	//
@@ -24,6 +30,6 @@ int main(void) {
 	}
 
 	return 0;
-}  // chpater09 p.308 zigzag	
+}  // chpater09 p.310 arraycross03.c	
 
 
