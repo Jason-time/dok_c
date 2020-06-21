@@ -2,6 +2,15 @@
 #include<conio.h>
 #include<stdlib.h>
 
+// 나이 매개변수로 요금 반환 
+int GetFee(int nAge) {
+	int nFee = 1000;
+	if (nAge < 20) nFee /= 2;
+
+	return nFee;
+}
+
+// 메뉴 출력 선택받는 인터페이스
 int PrintMenu(void) {
 	int nInput = 0;
 	system("cls");
@@ -11,31 +20,27 @@ int PrintMenu(void) {
 	return nInput;
 }
 
+//사용자에게 나이 입력 받는 인터페이스
+int GetAge(void) {
+	int nAge = 0;
+	printf("나이를 입력하세요. : ");
+	scanf_s("%d", &nAge);
+	return nAge;
+}
+ 
 int main(void) {
-	int nMenu = 0;
+	int nMenu = 0, nAge =0	;
 
-	while ((nMenu = PrintMenu()) != 0)
-	{
-		switch (nMenu)
-		{
-		case 1:
-			puts("새 항목을 추가합니다.");
-			break;
-		case 2:
-			puts("기존 항목에서 검색합니다.");
-			break;
-		case 3:
-			puts("전체 내용을 출력합니다.");
-			break;
-		case 4:
-			puts("기존 항목을 삭제합니다.");
-			break;
-		default:
-			puts("알 수 없는 명령입니다.");
-		}
+
+	while ((nMenu = PrintMenu()) != 0){
+	 
+		if(nMenu ==1){
+			nAge = GetAge();
+			printf("요금은 %d원 입니다.\n", GetFee(nAge));
 		_getch();
+		}
 	}
 
 	puts("Bye~~!");
 	return 0;
-}  // chpater10 p.341 Looping of Print menu.c
+}  // chpater10 p.344 Looping of Print menu02.c
