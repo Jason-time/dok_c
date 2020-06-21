@@ -1,46 +1,39 @@
-#include <stdio.h>
-#include<conio.h>
-#include<stdlib.h>
+#include <stdio.h>  
 
-// 나이 매개변수로 요금 반환 
-int GetFee(int nAge) {
-	int nFee = 1000;
-	if (nAge < 20) nFee /= 2;
+// 정수 입력 함수
+int GetData(void) {
+	int num;
+	printf("정수를 입력하세요. : ");
+	scanf_s("%d",&num);
 
-	return nFee;
+	return num;
 }
 
-// 메뉴 출력 선택받는 인터페이스
-int PrintMenu(void) {
-	int nInput = 0;
-	system("cls");
-
-	printf("[1]New\t[2]Search\t[3]Print\t[4]Remove\t[0]Exit\n:");
-	scanf_s("%d", &nInput);
-	return nInput;
+// 최댓값 구하기 함수
+int GetMax(int num1, int num2, int num3) {
+	int nMax=num1;
+	if (nMax < num2) nMax = num2;
+	if (nMax < num3) nMax = num3;
+	return nMax;
 }
 
 //사용자에게 나이 입력 받는 인터페이스
-int GetAge(void) {
-	int nAge = 0;
-	printf("나이를 입력하세요. : ");
-	scanf_s("%d", &nAge);
-	return nAge;
+void PrintData(int num1, int num2, int num3, int nMax) {
+	printf("%d, %d, %d 중 가장 큰 수는 %d 입니다.", num1, num2, num3, nMax);
+	return ;
 }
  
 int main(void) {
-	int nMenu = 0, nAge =0	;
+	int aList[3] = { 0 };
+	int nMax = -9999, i = 0;
 
+	//입력
+	for (i = 0; i < 3;++i)
+		aList[i] = GetData();
+	//최댓값 계산
+	nMax = GetMax(aList[0], aList[1], aList[2]);
+	// 출력
+	PrintData(aList[0], aList[1], aList[2], nMax);
 
-	while ((nMenu = PrintMenu()) != 0){
-	 
-		if(nMenu ==1){
-			nAge = GetAge();
-			printf("요금은 %d원 입니다.\n", GetFee(nAge));
-		_getch();
-		}
-	}
-
-	puts("Bye~~!");
 	return 0;
-}  // chpater10 p.344 Looping of Print menu02.c
+}  // // chpater10 10-01 p.348 codediv.c
