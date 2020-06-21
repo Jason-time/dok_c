@@ -1,29 +1,41 @@
 #include <stdio.h>
+#include<conio.h>
+#include<stdlib.h>
 
-int main(int argc, char* argv[]) {
-	//전체 과금률 배열
-	double aRate[10] = {
-		0.0,0.1,0.25, //1~3세
-		0.5,0.5,		//4,5세
-		0.6,0.65,		//6,7세
-		0.8,0.82,0.97	//8~10세
-	};
-	int nAge = 0, i = 0, nFee = 1000;
+int PrintMenu(void) {
+	int nInput = 0;
+	system("cls");
 
-	//요금표 출력
-	printf("\t요금표\n\n");
-	for (i = 1;i <= 10;++i)
-		printf("%2d세 요금 : \t%d원\n", i, (int)(nFee * aRate[i - 1]));;
-	putchar('\n');
+	printf("[1]New\t[2]Search\t[3]Print\t[4]Remove\t[0]Exit\n:");
+	scanf_s("%d", &nInput);
+	return nInput;
+}
 
-	//나이 입력 후 인덱스 적용
-	printf("나이를 입력하세요. : ");
-	scanf_s("%d", &nAge);
-	if (nAge < 1)		nAge = 1;
-	else if (nAge > 10)	nAge = 10;
+int main(void) {
+	int nMenu = 0;
 
-	//나이에 맞는 배열 선택 후 출력
-	printf("최종요금 : %d원\n", (int)(nFee * aRate[nAge - 1]));
-	putchar('\n');
+	while ((nMenu = PrintMenu()) != 0)
+	{
+		switch (nMenu)
+		{
+		case 1:
+			puts("새 항목을 추가합니다.");
+			break;
+		case 2:
+			puts("기존 항목에서 검색합니다.");
+			break;
+		case 3:
+			puts("전체 내용을 출력합니다.");
+			break;
+		case 4:
+			puts("기존 항목을 삭제합니다.");
+			break;
+		default:
+			puts("알 수 없는 명령입니다.");
+		}
+		_getch();
+	}
+
+	puts("Bye~~!");
 	return 0;
-}  // chpater09 p.315 arraylookup01.c
+}  // chpater10 p.341 Looping of Print menu.c
