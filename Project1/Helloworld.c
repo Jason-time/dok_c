@@ -1,39 +1,50 @@
-#include <stdio.h>  
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
 
-// 정수 입력 함수
-int GetData(void) {
-	int num;
-	printf("정수를 입력하세요. : ");
-	scanf_s("%d",&num);
+int PrintMenu(void) {
+	int nInput = 0;
+	system("cls");
+	printf("[1]New\t[2]Search\t[3]Print\t[4]Remove\t[0]Exit\n:");
+	scanf_s("%d", &nInput);
+	return nInput;
 
-	return num;
 }
 
-// 최댓값 구하기 함수
-int GetMax(int num1, int num2, int num3) {
-	int nMax=num1;
-	if (nMax < num2) nMax = num2;
-	if (nMax < num3) nMax = num3;
-	return nMax;
-}
-
-//사용자에게 나이 입력 받는 인터페이스
-void PrintData(int num1, int num2, int num3, int nMax) {
-	printf("%d, %d, %d 중 가장 큰 수는 %d 입니다.", num1, num2, num3, nMax);
-	return ;
-}
- 
 int main(void) {
-	int aList[3] = { 0 };
-	int nMax = -9999, i = 0;
+	int nMenu = 0;
 
-	//입력
-	for (i = 0; i < 3;++i)
-		aList[i] = GetData();
-	//최댓값 계산
-	nMax = GetMax(aList[0], aList[1], aList[2]);
-	// 출력
-	PrintData(aList[0], aList[1], aList[2], nMax);
+	while ((nMenu = PrintMenu()) != 0) {
+		switch (nMenu)
+		{
+		case 1:
+			puts("새 항목을 추가합니다.");
+			_getch();
 
+			break;
+
+		case 2:
+			puts("기존 항목에서 검색합니다.");
+			_getch();
+			break;
+
+		case 3:
+			puts("전체 내용을 출력합니다.");
+			_getch();
+			break;
+
+		case 4:
+			puts("기존 항목을 삭제합니다.");
+			_getch();
+			break;
+
+		default:
+			puts("알 수 없는 명령입니다.");
+			_getch();
+			break;
+		}
+		_getch;
+	}
+	puts("Bye~~!");
 	return 0;
-}  // // chpater10 10-01 p.348 codediv.c
+}  // chpater10 p.342 Printmenu01.c
