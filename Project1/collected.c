@@ -837,4 +837,38 @@ int main(void) {
 	return 0;
 }  // chpater10 p.344 PrintMenu02.c
 
+#include<stdio.h>
+
+int main(void) {
+	int x = 10;
+	int* pnData = &x;
+	printf("x : %d\n", x);
+
+	*pnData = 20;
+	printf("x : %d\n", x);
+	return 0;
+
+} // chpater11 p.374 pointer02.c
+
+#include<stdio.h>
+#include<string.h>
+
+int main(void) {
+
+	char szBuffer[16] = { "Hello" };
+	char* pszData = szBuffer;
+	int nLength = 0;
+	while(*pszData) {
+		pszData++;
+		nLength++;
+	}
+
+	printf("Length : %d\n", nLength);
+	printf("Length : %d\n", strlen(szBuffer));
+	printf("Length : %d\n", strlen("World"));
+
+	return 0;
+
+} // chpater11 p.374 pointer02.c
+
 */

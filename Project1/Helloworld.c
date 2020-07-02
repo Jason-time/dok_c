@@ -1,40 +1,20 @@
 #include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-
-int GetFee(int nAge) {
-	int nFee = 1000;
-	if (nAge < 20) nFee /= 2;
-	return nFee;
-}
-
-
-int PrintMenu(void) {
-	int nInput = 0;
-	system("cls");
-	printf("[1]New\t[2]Search\t[3]Print\t[4]Remove\t[0]Exit\n:");
-	scanf_s("%d", &nInput);
-	return nInput;
-}
-
-int GetAge(void) {
-	int nAge = 0;
-	printf("나이를 입력하세요. : ");
-	scanf_s("%d", &nAge);
-	return nAge;
-}
+#include<string.h>
 
 int main(void) {
-
-	int nMenu = 0, nAge = 0;
-	
-	while ((nMenu = PrintMenu()) != 0){
-		if(nMenu==1){
-			nAge = GetAge();
-			printf("요금은 %d원 입니다. \n", GetFee(nAge));
-			_getch();
-		}
+ 
+	char szBuffer[16] = { "Hello" };
+	char* pszData = szBuffer;
+	int nLength = 0;
+	while(*pszData) {
+		pszData++;
+		nLength++;
 	}
-	puts("Bye~~!");
+
+	printf("Length : %d\n", nLength);
+	printf("Length : %d\n", strlen(szBuffer));
+	printf("Length : %d\n", strlen("World"));
+
 	return 0;
-}  // chpater10 p.344 PrintMenu02.c
+
+} // chpater11 p.374 pointer02.c
