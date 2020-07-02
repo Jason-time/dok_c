@@ -2,16 +2,17 @@
 #include<string.h>
 
 int main(void) {
- 
-	char szBuffer[16] = { "Hello" };
-	char* pszData = szBuffer;
-	int nLength = 0;
-	while(*pszData) {
-		pszData++;
+	int* pList = NULL, i = 0;
+
+	pList = (int*)malloc(sizeof(int) * 3);
+	pList[0] = 10;
+	pList[1] = 20;
+	pList[2] = 30;
+
+	for (i = 0;i < 3;++i) {
+		printf("%d\n", pList[i]);
 	}
-
-	printf("Length : %d\n", pszData- szBuffer); 
-
+	free(pList);
 	return 0;
 
-} // chpater11 p.382 ptrstring02.c
+} // chpater11.2 p.385 ptrmalloc.c
