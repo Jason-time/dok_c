@@ -8,13 +8,10 @@ int main(void) {
 	int nLength = 0;
 	while(*pszData) {
 		pszData++;
-		nLength++;
 	}
 
-	printf("Length : %d\n", nLength);
-	printf("Length : %d\n", strlen(szBuffer));
-	printf("Length : %d\n", strlen("World"));
+	printf("Length : %d\n", pszData- szBuffer); 
 
 	return 0;
 
-} // chpater11 p.374 pointer02.c
+} // chpater11 p.382 ptrstring02.c
