@@ -887,7 +887,7 @@ int main(void) {
 
 	return 0;
 
-} // chpater11 p.382 ptrstring02.c
+} // chpater11.2 p.382 ptrstring02.c
 
 
 */
